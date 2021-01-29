@@ -15,16 +15,22 @@ SDL_Window* g_window = nullptr;
 // function prototypes
 bool InitSDL();
 void CloseSDL();
+bool Update();
 
 int main(int argc, char* argv[])
 {
+    // check if the user wishes to quit
+    bool quit = false; 
+
+    // Check if SDL was initialized
     if (InitSDL())
     {
-        SDL_Delay(5000);
+        while (!quit)
+        {
+            quit = Update();
+        }
     }
-
     CloseSDL();
-
     return 0;
 }
 
@@ -64,4 +70,30 @@ void CloseSDL()
     // quit SDL subsystems
     IMG_Quit();
     SDL_Quit();
+}
+
+bool Update()
+{
+    // Event handler
+    SDL_Event e;
+
+    // Get events
+    SDL_PollEvent(&e);
+
+    switch (e.type)
+    {
+        // Click the 'X' to quit
+    case SDL_QUIT:
+        return true;
+        break;
+    case SDL_KEYUP:
+        switch (e.key.keysym.sym)
+        {
+        case SDLK_q:
+            return true;
+            break;
+        }
+    }
+
+    return false;
 }
