@@ -76,6 +76,7 @@ bool InitSDL()
     {
         // setup screen manager
         game_screen_manager = new GameScreenManager(g_renderer, SCREEN_LEVEL1);
+
         // set the time
         g_old_time = SDL_GetTicks();
 

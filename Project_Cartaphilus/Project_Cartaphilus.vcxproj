@@ -175,6 +175,9 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\cpp\PhysicsManager.cpp" />
+    <ClCompile Include="src\cpp\Character.cpp" />
+    <ClCompile Include="src\cpp\MainMenu.cpp" />
     <ClCompile Include="src\cpp\GameScreenManager.cpp" />
     <ClCompile Include="src\cpp\FirstLevel.cpp" />
     <ClCompile Include="src\cpp\GameScreen.cpp" />
@@ -182,6 +185,9 @@
     <ClCompile Include="src\cpp\Texture2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Headers\PhysicsManager.h" />
+    <ClInclude Include="src\Headers\Character.h" />
+    <ClInclude Include="src\Headers\MainMenu.h" />
     <ClInclude Include="src\Headers\GameScreenManager.h" />
     <ClInclude Include="src\Headers\FirstLevel.h" />
     <ClInclude Include="src\Headers\GameScreen.h" />
